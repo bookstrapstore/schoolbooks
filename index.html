@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstrapstore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Encabezado con título y bandera -->
+    <header class="header">
+        <img src="francia.png" alt="Bandera de Francia" class="flag">
+        <h1 class="title">Bookstrapstore</h1>
+    </header>
+
+    <!-- Contenedor principal con el enlace de descarga -->
+    <main class="container">
+        <p class="description">Haz clic en el enlace a continuación para descargar tu archivo:</p>
+        <div id="download-link" class="download-link">
+            <a href="#" id="link" class="button">Descargar archivo</a>
+        </div>
+    </main>
+
+    <!-- Script para manejar el parámetro de grupo -->
+    <script>
+        // Obtener el parámetro "grupo" de la URL
+        const params = new URLSearchParams(window.location.search);
+        const grupo = params.get('grupo');
+
+        // Definir los enlaces según el grupo
+        const links = {
+            '1': 'https://bit.ly/enlace-grupo1',
+            '2': 'https://bit.ly/enlace-grupo2',
+            '3': 'https://bit.ly/enlace-grupo3'
+        };
+
+        // Mostrar el enlace correspondiente al grupo
+        const linkElement = document.getElementById('link');
+        if (grupo && links[grupo]) {
+            linkElement.href = links[grupo];
+        } else {
+            linkElement.textContent = 'No tienes acceso a ningún archivo.';
+            linkElement.removeAttribute('href'); // Desactivar el enlace si no hay grupo válido
+        }
+    </script>
+</body>
+</html>
