@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,18 +9,49 @@
 <body>
     <!-- Encabezado con título y bandera -->
     <header class="header">
-        <img src="france.png" alt="Bandera de Francia" class="flag">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" alt="Flag of France" class="flag">
         <h1 class="title">Bookstrapstore</h1>
     </header>
 
     <!-- Contenedor principal con el enlace de descarga -->
     <main class="container">
-        <p class="description">Haz clic en el enlace a continuación para descargar tu archivo:</p>
+        <p class="description">Click the link below to download your file:</p>
         <div id="download-link" class="download-link">
-            <a href="download.php?grupo=1" id="link" class="button">Descargar archivo</a>
+            <a href="download.php?grupo=1" id="link" class="button">Download File</a>
+        </div>
+
+        <!-- Sección de enlaces a otros libros -->
+        <section class="books-section">
+            <h2>Explore More Free Books</h2>
+            <ul class="books-list">
+                <li><a href="https://www.gutenberg.org/ebooks/1342" target="_blank">Book 1: Pride and Prejudice by Jane Austen</a></li>
+                <li><a href="https://www.gutenberg.org/ebooks/11" target="_blank">Book 2: Alice's Adventures in Wonderland by Lewis Carroll</a></li>
+                <li><a href="https://www.gutenberg.org/ebooks/2701" target="_blank">Book 3: Moby Dick by Herman Melville</a></li>
+                <li><a href="https://www.gutenberg.org/ebooks/1661" target="_blank">Book 4: The Adventures of Sherlock Holmes by Arthur Conan Doyle</a></li>
+            </ul>
+        </section>
+
+        <!-- Sección de anuncios (ads) -->
+        <section class="ads-section">
+            <h2>Sponsored Content</h2>
+            <div class="ad">
+                <a href="https://unsplash.com" target="_blank">
+                    <img src="https://source.unsplash.com/300x200/?book" alt="Ad 1" class="ad-image">
+                    <p>Free high-quality images for your projects!</p>
+                </a>
             </div>
+            <div class="ad">
+                <a href="https://pixabay.com" target="_blank">
+                    <img src="https://source.unsplash.com/300x200/?library" alt="Ad 2" class="ad-image">
+                    <p>Discover free stock photos and videos!</p>
+                </a>
+            </div>
+        </section>
     </main>
 
-  
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 Bookstrapstore. All rights reserved.</p>
+    </footer>
 </body>
 </html>
