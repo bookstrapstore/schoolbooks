@@ -1,11 +1,4 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estilos generales */
+/* Espaciado general */
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -23,7 +16,7 @@ body {
 }
 
 .flag {
-    width: 40px;
+    width: 50px;
     height: auto;
     margin-right: 10px;
 }
@@ -31,22 +24,7 @@ body {
 .title {
     font-size: 2rem;
     font-weight: bold;
-    color: #007BFF; /* Azul discreto */
-}
-
-/* Contenedor principal */
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.description {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    color: #007BFF;
 }
 
 /* Botón de descarga */
@@ -63,4 +41,74 @@ body {
 
 .button:hover {
     background-color: #0056b3;
+}
+
+/* Sección de libros */
+.books-section {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.books-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.books-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.books-list li {
+    margin-bottom: 10px;
+}
+
+.books-list a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.books-list a:hover {
+    text-decoration: underline;
+}
+
+/* Sección de publicidad académica */
+.ads-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.ads-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #007BFF;
+}
+
+.ad {
+    margin-bottom: 20px;
+}
+
+.ad-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.ad p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Pie de página */
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
 }
