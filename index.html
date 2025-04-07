@@ -21,7 +21,7 @@
         </div>
 
         <!-- Espaciado adicional -->
-        <div style="height: 40px;"></div>
+        <div class="spacer"></div>
 
         <!-- Sección de enlaces a otros libros -->
         <section class="books-section">
@@ -65,11 +65,17 @@
 
     <!-- Script para manejar la descarga dinámica -->
     <script>
+        /*
+         * Este script maneja las descargas dinámicas basadas en el parámetro "grupo" en la URL.
+         * Los enlaces se definen en el objeto "links".
+         * Si el parámetro "grupo" no es válido, el botón se desactiva y muestra un mensaje de error.
+         */
+
         // Definir los enlaces según el grupo
         const links = {
-            '1': 'https://www.mediafire.com/file/9gkwr5muxhmg8kh/Cambridge_Primary_Mathematics_2ED_1_Learners_Book_www.frenglish.ru.pdf/file', // Ejemplo: Pride and Prejudice
-            '2': 'https://www.gutenberg.org/files/11/11-0.txt',     // Ejemplo: Alice's Adventures in Wonderland
-            '3': 'https://www.gutenberg.org/files/2701/2701-0.txt'  // Ejemplo: Moby Dick
+            '1': 'https://www.mediafire.com/file/9gkwr5muxhmg8kh/Cambridge_Primary_Mathematics_2ED_1_Learners_Book_www.frenglish.ru.pdf/file',
+            '2': 'https://www.gutenberg.org/files/11/11-0.txt',
+            '3': 'https://www.gutenberg.org/files/2701/2701-0.txt'
         };
 
         // Obtener el parámetro "grupo" de la URL
@@ -78,11 +84,16 @@
 
         // Mostrar el enlace correspondiente al grupo
         const linkElement = document.getElementById('link');
-        if (grupo && links[grupo]) {
-            linkElement.href = links[grupo];
+        if (!linkElement) {
+            console.error('Error: Element with ID "link" not found.');
         } else {
-            linkElement.textContent = 'No access to any file.';
-            linkElement.removeAttribute('href'); // Desactivar el enlace si no hay grupo válido
+            if (grupo && links[grupo]) {
+                linkElement.href = links[grupo];
+            } else {
+                linkElement.textContent = 'Invalid group or no access.';
+                linkElement.style.pointerEvents = 'none';
+                linkElement.style.backgroundColor = '#ccc';
+            }
         }
     </script>
 </body>
