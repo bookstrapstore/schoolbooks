@@ -21,27 +21,6 @@
             </div>
     </main>
 
-    <!-- Script para manejar el parámetro de grupo -->
-    <script>
-        // Obtener el parámetro "grupo" de la URL
-        const params = new URLSearchParams(window.location.search);
-        const grupo = params.get('grupo');
-
-        // Definir los enlaces según el grupo
-        const links = {
-            '1': 'https://bit.ly/enlace-grupo1',
-            '2': 'https://bit.ly/enlace-grupo2',
-            '3': 'https://bit.ly/enlace-grupo3'
-        };
-
-        // Mostrar el enlace correspondiente al grupo
-        const linkElement = document.getElementById('link');
-        if (grupo && links[grupo]) {
-            linkElement.href = links[grupo];
-        } else {
-            linkElement.textContent = 'No tienes acceso a ningún archivo.';
-            linkElement.removeAttribute('href'); // Desactivar el enlace si no hay grupo válido
-        }
-    </script>
+  
 </body>
 </html>
