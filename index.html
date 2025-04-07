@@ -17,7 +17,7 @@
     <main class="container">
         <p class="description">Click the link below to download your file:</p>
         <div id="download-link" class="download-link">
-            <a href="download.php?grupo=1" id="link" class="button">Download File</a>
+            <a href="#" id="link" class="button">Download File</a>
         </div>
 
         <!-- Espaciado adicional -->
@@ -62,5 +62,28 @@
     <footer class="footer">
         <p>&copy; 2023 Bookstrapstore. All rights reserved.</p>
     </footer>
+
+    <!-- Script para manejar la descarga dinámica -->
+    <script>
+        // Definir los enlaces según el grupo
+        const links = {
+            '1': 'https://www.gutenberg.org/files/1342/1342-0.txt', // Ejemplo: Pride and Prejudice
+            '2': 'https://www.gutenberg.org/files/11/11-0.txt',     // Ejemplo: Alice's Adventures in Wonderland
+            '3': 'https://www.gutenberg.org/files/2701/2701-0.txt'  // Ejemplo: Moby Dick
+        };
+
+        // Obtener el parámetro "grupo" de la URL
+        const params = new URLSearchParams(window.location.search);
+        const grupo = params.get('grupo');
+
+        // Mostrar el enlace correspondiente al grupo
+        const linkElement = document.getElementById('link');
+        if (grupo && links[grupo]) {
+            linkElement.href = links[grupo];
+        } else {
+            linkElement.textContent = 'No access to any file.';
+            linkElement.removeAttribute('href'); // Desactivar el enlace si no hay grupo válido
+        }
+    </script>
 </body>
 </html>
