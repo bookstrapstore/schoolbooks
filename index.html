@@ -59,13 +59,9 @@
         </section>
         <!-- Sección de banners dinámicos -->
         <section class="ads-section">
-            <h2>Purchase Books from Top Publishers</h2>
-            <div class="banner-container">
-                <a id="banner-link" href="#" target="_blank">
-                    <img id="banner-image" src="" alt="Advertisement Banner" class="banner-image">
-                </a>
-            </div>
-        </section>
+    <h2>Explore Recommended Books</h2>
+    <div id="book-ads" class="banner-container"></div>
+</section>
     </main>
 
     <!-- Footer -->
@@ -151,5 +147,31 @@
         // Cambiar el banner cada 5 segundos (5000 ms)
         setInterval(updateBanner, 5000);
     </script>
+    <!-- Sección de publicidad con Google Books API -->
+
+
+<script>
+    // Obtener libros recomendados usando Google Books API
+    fetch('https://www.googleapis.com/books/v1/volumes?q=subject:education&maxResults=5')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('book-ads');
+            data.items.forEach(book => {
+                const title = book.volumeInfo.title;
+                const thumbnail = book.volumeInfo.imageLinks?.thumbnail || 'placeholder.jpg';
+                const link = book.volumeInfo.infoLink;
+
+                const bookDiv = document.createElement('div');
+                bookDiv.innerHTML = `
+                    <a href="${link}" target="_blank">
+                        <img src="${thumbnail}" alt="${title}" class="banner-image">
+                        <p>${title}</p>
+                    </a>
+                `;
+                container.appendChild(bookDiv);
+            });
+        })
+        .catch(error => console.error('Error fetching books:', error));
+</script>
 </body>
 </html>
