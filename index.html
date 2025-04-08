@@ -81,19 +81,12 @@
             </div>
         </section>
 
-        <!-- Sección de publicidad de ventas de libros -->
+        <!-- Sección de banners dinámicos -->
         <section class="ads-section">
             <h2>Purchase Books from Top Publishers</h2>
-            <div class="ad">
-                <a href="https://global.oup.com/education/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Oxford_University_Press_logo.svg/300px-Oxford_University_Press_logo.svg.png" alt="Oxford University Press Logo" class="ad-image">
-                    <p>Purchase educational books from Oxford University Press.</p>
-                </a>
-            </div>
-            <div class="ad">
-                <a href="https://www.cambridge.org/core" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Cambridge_University_Press_logo.svg/300px-Cambridge_University_Press_logo.svg.png" alt="Cambridge University Press Logo" class="ad-image">
-                    <p>Purchase educational books from Cambridge University Press.</p>
+            <div class="banner-container">
+                <a id="banner-link" href="#" target="_blank">
+                    <img id="banner-image" src="" alt="Advertisement Banner" class="banner-image">
                 </a>
             </div>
         </section>
@@ -146,6 +139,40 @@
                 groupMessageElement.textContent = 'Failed to load links. Please try again later.';
                 groupMessageElement.style.color = '#ff0000';
             });
+
+        // Banners dinámicos
+        const banners = [
+            {
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Oxford_University_Press_logo.svg/300px-Oxford_University_Press_logo.svg.png",
+                link: "https://global.oup.com/education/"
+            },
+            {
+                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Cambridge_University_Press_logo.svg/300px-Cambridge_University_Press_logo.svg.png",
+                link: "https://www.cambridge.org/core"
+            },
+            {
+                image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Coursera_logo.png",
+                link: "https://www.coursera.org/"
+            }
+        ];
+
+        const bannerImage = document.getElementById('banner-image');
+        const bannerLink = document.getElementById('banner-link');
+
+        let currentIndex = 0;
+
+        function updateBanner() {
+            const currentBanner = banners[currentIndex];
+            bannerImage.src = currentBanner.image;
+            bannerLink.href = currentBanner.link;
+            currentIndex = (currentIndex + 1) % banners.length; // Avanzar al siguiente banner
+        }
+
+        // Cambiar el banner cada 5 segundos (5000 ms)
+        setInterval(updateBanner, 5000);
+
+        // Mostrar el primer banner al cargar la página
+        updateBanner();
     </script>
 </body>
 </html>
