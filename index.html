@@ -112,28 +112,8 @@
                 groupMessageElement.style.color = '#ff0000';
             });
 
-        // Banners dinámicos
-        const banners = [
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Oxford_University_Press_logo.svg/300px-Oxford_University_Press_logo.svg.png",
-                link: "https://global.oup.com/education/"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Cambridge_University_Press_logo.svg/300px-Cambridge_University_Press_logo.svg.png",
-                link: "https://www.cambridge.org/core"
-            },
-            {
-                image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Coursera_logo.png",
-                link: "https://www.coursera.org/"
-            }
-        ];
-
-        const bannerImage = document.getElementById('banner-image');
-        const bannerLink = document.getElementById('banner-link');
-
-        let currentIndex = 0;
-
-        // Función para actualizar el banner
+       
+        
         function updateBanner() {
             const currentBanner = banners[currentIndex];
             bannerImage.src = currentBanner.image;
