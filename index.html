@@ -57,30 +57,6 @@
                 <li><i class="fa-solid fa-book"></i> <a href="https://www.mediafire.com/file/423vy837zqoeb6l/cambridge-international-as-amp-a-level-mathematics-pure-mathematics-1-coursebook-9781108407144.pdf/file" target="_blank">Cambridge AS & A Level Pure Mathematics 1</a></li>
             </ul>
         </section>
-
-        <!-- Sección de publicidad académica -->
-        <section class="ads-section">
-            <h2>Educational Resources</h2>
-            <div class="ad">
-                <a href="https://www.coursera.org/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Coursera_logo.png" alt="Coursera Logo" class="ad-image">
-                    <p>Free online courses from top universities.</p>
-                </a>
-            </div>
-            <div class="ad">
-                <a href="https://www.khanacademy.org/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Khan_Academy_logo.svg/300px-Khan_Academy_logo.svg.png" alt="Khan Academy Logo" class="ad-image">
-                    <p>Learn anything for free with Khan Academy.</p>
-                </a>
-            </div>
-            <div class="ad">
-                <a href="https://www.edx.org/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/EdX-logo.png" alt="edX Logo" class="ad-image">
-                    <p>Access high-quality education from institutions worldwide.</p>
-                </a>
-            </div>
-        </section>
-
         <!-- Sección de banners dinámicos -->
         <section class="ads-section">
             <h2>Purchase Books from Top Publishers</h2>
@@ -161,6 +137,7 @@
 
         let currentIndex = 0;
 
+        // Función para actualizar el banner
         function updateBanner() {
             const currentBanner = banners[currentIndex];
             bannerImage.src = currentBanner.image;
@@ -168,11 +145,11 @@
             currentIndex = (currentIndex + 1) % banners.length; // Avanzar al siguiente banner
         }
 
+        // Mostrar el primer banner inmediatamente
+        updateBanner();
+
         // Cambiar el banner cada 5 segundos (5000 ms)
         setInterval(updateBanner, 5000);
-
-        // Mostrar el primer banner al cargar la página
-        updateBanner();
     </script>
 </body>
 </html>
