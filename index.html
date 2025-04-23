@@ -115,21 +115,7 @@
                 groupMessageElement.textContent = 'Failed to load links. Please try again later.';
                 groupMessageElement.style.color = '#ff0000';
             });
-
-       
-        
-        function updateBanner() {
-            const currentBanner = banners[currentIndex];
-            bannerImage.src = currentBanner.image;
-            bannerLink.href = currentBanner.link;
-            currentIndex = (currentIndex + 1) % banners.length; // Avanzar al siguiente banner
-        }
-
-        // Mostrar el primer banner inmediatamente
-        updateBanner();
-
-        // Cambiar el banner cada 5 segundos (5000 ms)
-        setInterval(updateBanner, 5000);
+   
     </script>
     <!-- Sección de publicidad con Google Books API -->
 
